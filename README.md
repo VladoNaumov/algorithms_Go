@@ -1,1 +1,1 @@
-## Lerning Go
+### Learning "Algorithm in Go" 

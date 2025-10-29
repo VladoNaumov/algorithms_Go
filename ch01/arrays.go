@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-// 1. Максимальная прибыль (одна сделка)
+// 1. Максимальная прибыль (одна сделка), prices{7, 1, 5, 3, 6, 4}, prices {7, 6, 4, 3, 1}
 func maxProfitOneTransaction(prices []int) int {
 	if len(prices) < 2 {
 		return 0
@@ -377,12 +377,12 @@ func findDuplicateFloyd(nums []int) int {
 // ---------------- main: тесты из задания ----------------
 func main() {
 	// 1
-	fmt.Println("\n1) maxProfitOneTransaction:")
+	fmt.Println("\n1)  Максимальная прибыль (одна сделка):")
 	fmt.Println(maxProfitOneTransaction([]int{7, 1, 5, 3, 6, 4})) // ожидает 5
 	fmt.Println(maxProfitOneTransaction([]int{7, 6, 4, 3, 1}))    // ожидает 0
 
 	// 2
-	fmt.Println("\n2) maxSubarraySum (Kadane):")
+	fmt.Println("\n2) Анализ баланса (Кадане):")
 	fmt.Println(maxSubarraySum([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4})) // ожидает 6 (4,-1,2,1)
 	fmt.Println(maxSubarraySum([]int{1, -2, -3, -4}))                 // ожидает 1
 

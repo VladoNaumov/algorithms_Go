@@ -1,5 +1,110 @@
 ### Learning "Algorithm in Go" 
 
+---
+
+### 1. Iterative Structures (using loops / iterators)
+
+**ch01 Arrays**
+
+* **Arrays — basic operations:** search, insertion, deletion, and shifting.
+* **Two Pointers:** efficient traversal of sorted arrays, searching for pairs and triplets.
+* **Strings:** working with sequences of characters as arrays.
+* **Sliding Window:** analysis of subarrays with fixed or variable length.
+* **Matrices:** two-dimensional arrays — traversal, diagonals, rotation.
+* **Intervals:** merging, intersection, and sorting of ranges.
+
+---
+
+**ch02 Recursion**
+
+The basic principle: divide a problem into smaller subproblems of the same type.
+Applied in tree and graph traversal, as well as in backtracking search.
+
+**Backtracking Search** — recursive enumeration of all possible options with a step-back when an invalid state is reached.
+Examples: Sudoku solver, permutations, combinations generation, N-Queens problem.
+
+---
+
+### Stack and Queue
+
+* **Stack (LIFO structure):** used in expression evaluation, reverse traversal, recursion.
+* **Queue (FIFO structure):** used in simulations, BFS traversal, and data streams.
+* **Monotonic Queue:** maintains elements in ascending/descending order; used for finding maximums in sliding windows.
+
+---
+
+### Linked List
+
+A structure where each element references the next one.
+Tasks: reversal, node deletion, finding the middle node, detecting a cycle.
+
+---
+
+### Hash Tables
+
+Associative arrays providing fast access by key.
+Used for searching, counting frequencies, and removing duplicates.
+
+*All of the above structures operate through iteration — traversal of elements using iterators, loops, or pointers.*
+
+---
+
+### 2. Recursive Structures (using function calls)
+
+**Recursion**
+The core principle: divide a problem into subproblems of the same type.
+Applied in traversing trees, graphs, and solving problems with backtracking.
+
+**Backtracking**
+A recursive enumeration of all possible configurations with returning one step back upon an invalid choice.
+Examples: Sudoku, permutations, combinations generation, N-Queens.
+
+---
+
+### 3. Trees
+
+Hierarchical data structures, usually traversed recursively.
+
+* **Binary Tree:** each node has up to two children.
+* **Binary Search Tree (BST):** left subtree ≤ node < right subtree.
+* **Binary Heap:** a priority structure used for sorting and priority queues.
+* **Prefix Tree (Trie):** used for storing strings, autocomplete, and dictionaries.
+
+---
+
+### 4. Graphs
+
+Data structures representing relationships between vertices; traversed recursively or via stacks/queues.
+
+* **Depth-First Search (DFS):** recursive traversal, exploring as deep as possible before backtracking.
+* **Breadth-First Search (BFS):** iterative level-by-level traversal using a queue.
+
+---
+
+### 5. Sorting
+
+Bubble, Selection, Insertion, Merge, Quick, and other algorithms.
+Some (Merge Sort, Quick Sort) are recursive; others (Bubble, Insertion) are iterative.
+
+---
+
+### 6. Binary Search
+
+Efficient method for finding an element in a sorted array.
+Can be implemented either iteratively or recursively.
+
+*These sections employ recursion — calling a function within itself to traverse or solve a problem.*
+
+---
+
+### 7. Dynamic Programming (DP)
+
+A method for solving complex problems by breaking them into overlapping subproblems and storing intermediate results.
+
+* **Memoization:** recursive approach with caching of results.
+* **Tabulation:** iterative approach, filling a DP table from bottom to top.
+
+---
 
 ###  **1. Итерационные структуры (через цикл / итератор)**
 

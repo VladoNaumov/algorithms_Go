@@ -6,7 +6,7 @@ import (
 	"sort"
 )
 
-// 1. Максимальная прибыль (одна сделка)
+// 1. Максимальная прибыль (одна сделка), prices{7, 1, 5, 3, 6, 4}, prices {7, 6, 4, 3, 1}
 func maxProfitOneTransaction(prices []int) int {
 	if len(prices) < 2 {
 		return 0
@@ -270,29 +270,7 @@ func hasDuplicates(ids []int) bool {
 	return false
 }
 
-// 16. Максимальная сумма фиксированного окна (sliding window max sum)
-func maxSumFixedWindow(nums []int, k int) int {
-	if len(nums) == 0 || k <= 0 || k > len(nums) {
-		return 0
-	}
-	// сумма первых k элементов
-	currentSum := 0
-	for i := 0; i < k; i++ {
-		currentSum += nums[i]
-	}
-	bestSum := currentSum
-	// сдвигаем окно вправо
-	for i := k; i < len(nums); i++ {
-		currentSum += nums[i]   // добавляем новый элемент справа
-		currentSum -= nums[i-k] // удаляем элемент слева, вышедший из окна
-		if currentSum > bestSum {
-			bestSum = currentSum
-		}
-	}
-	return bestSum
-}
-
-// 17. Слияние двух отсортированных массивов в первом (in-place).
+// 16. Слияние двух отсортированных массивов в первом (in-place).
 // first — срез длины m+n, где первые m элементов — реальные значения,
 // tail (m..m+n-1) зарезервирован под копирование. second — срез длины n.
 func mergeIntoFirst(first []int, m int, second []int, n int) {
@@ -315,7 +293,7 @@ func mergeIntoFirst(first []int, m int, second []int, n int) {
 	// оставшиеся элементы first уже на местах (если были)
 }
 
-// 18. Мажоритарный элемент (Boyer-Moore Voting) — элемент, встречающийся > n/2 раз.
+// 17. Мажоритарный элемент (Boyer-Moore Voting) — элемент, встречающийся > n/2 раз.
 // Предполагается, что такой элемент гарантированно существует.
 func majorityElement(nums []int) int {
 	candidate := 0
@@ -333,7 +311,7 @@ func majorityElement(nums []int) int {
 	return candidate
 }
 
-// 19. Количество подмассивов с суммой равной k (с учётом отрицательных)
+// 18. Количество подмассивов с суммой равной k (с учётом отрицательных)
 // используем префикс-суммы и карту частот
 func countSubarraysWithSum(nums []int, k int) int {
 	prefixFreq := make(map[int]int)
@@ -351,7 +329,7 @@ func countSubarraysWithSum(nums []int, k int) int {
 	return count
 }
 
-// 20. Найти повторяющееся число в массиве длины n+1, содержащем числа 1..n,
+// 19. Найти повторяющееся число в массиве длины n+1, содержащем числа 1..n,
 // ровно одно число дублируется (Floyd's Tortoise and Hare)
 func findDuplicateFloyd(nums []int) int {
 	// Phase 1: найти встречу в цикле
@@ -377,12 +355,12 @@ func findDuplicateFloyd(nums []int) int {
 // ---------------- main: тесты из задания ----------------
 func main() {
 	// 1
-	fmt.Println("\n1) maxProfitOneTransaction:")
+	fmt.Println("\n1)  Максимальная прибыль (одна сделка):")
 	fmt.Println(maxProfitOneTransaction([]int{7, 1, 5, 3, 6, 4})) // ожидает 5
 	fmt.Println(maxProfitOneTransaction([]int{7, 6, 4, 3, 1}))    // ожидает 0
 
 	// 2
-	fmt.Println("\n2) maxSubarraySum (Kadane):")
+	fmt.Println("\n2) Анализ баланса (Кадане):")
 	fmt.Println(maxSubarraySum([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4})) // ожидает 6 (4,-1,2,1)
 	fmt.Println(maxSubarraySum([]int{1, -2, -3, -4}))                 // ожидает 1
 
@@ -467,11 +445,7 @@ func main() {
 	fmt.Println(hasDuplicates([]int{1, 2, 3, 4})) // false
 	fmt.Println(hasDuplicates([]int{1, 2, 2, 3})) // true
 
-	// 16
-	fmt.Println("\n16) Max sum of fixed window:")
-	fmt.Println("nums=[2,3,5,2,1,4], k=3 ->", maxSumFixedWindow([]int{2, 3, 5, 2, 1, 4}, 3)) // 10
-
-	//17
+	//16
 	fmt.Println("\n17) Merge two sorted arrays into first (in-place):")
 	first := []int{1, 3, 5, 0, 0, 0} // m=3, места для three
 	second := []int{2, 4, 6}         // n=3
@@ -479,16 +453,16 @@ func main() {
 	mergeIntoFirst(first, 3, second, 3)
 	fmt.Println("after: ", first) // [1 2 3 4 5 6]
 
-	//18
+	//17
 	fmt.Println("\n18) Majority element (Boyer-Moore):")
 	fmt.Println("[2,2,1,1,1,2,2] ->", majorityElement([]int{2, 2, 1, 1, 1, 2, 2})) // 2
 
-	//19
+	//18
 	fmt.Println("\n19) Count subarrays with sum == k:")
 	fmt.Println("[1,1,1], k=2 ->", countSubarraysWithSum([]int{1, 1, 1}, 2))             // 2
 	fmt.Println("[1,2,3,-1,2], k=3 ->", countSubarraysWithSum([]int{1, 2, 3, -1, 2}, 3)) // несколько примеров
 
-	//20
+	//19
 	fmt.Println("\n20) Find duplicate (Floyd):")
 	fmt.Println("[3,1,3,4,2] ->", findDuplicateFloyd([]int{3, 1, 3, 4, 2})) // 3
 }

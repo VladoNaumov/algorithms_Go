@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-/*
--------------------------------------------------
- 9. Транспонирование (m×n → n×m)
-    -------------------------------------------------
-*/
 func transpose(matrix [][]int) [][]int {
 	m, n := len(matrix), len(matrix[0])
 	res := make([][]int, n)

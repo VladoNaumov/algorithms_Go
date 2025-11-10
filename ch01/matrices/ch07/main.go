@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-/*
--------------------------------------------------
- 7. Самая большая область 1 (гистограмма + стек)
-    -------------------------------------------------
-*/
 func maximalRectangle(matrix [][]byte) int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return 0
@@ -24,7 +19,7 @@ func maximalRectangle(matrix [][]byte) int {
 				heights[j] = 0
 			}
 		}
-		maxArea = max(maxArea, largestRectangleArea(heights))
+		maxArea = max_(maxArea, largestRectangleArea(heights))
 	}
 	return maxArea
 }
@@ -42,13 +37,13 @@ func largestRectangleArea(h []int) int {
 			if len(stack) > 0 {
 				width = i - stack[len(stack)-1] - 1
 			}
-			area = max(area, height*width)
+			area = max_(area, height*width)
 		}
 		stack = append(stack, i)
 	}
 	return area
 }
-func max(a, b int) int {
+func max_(a, b int) int {
 	if a > b {
 		return a
 	}

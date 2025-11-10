@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-/*
--------------------------------------------------
- 6. Проверка судоку
-    -------------------------------------------------
-*/
 func isValidSudoku(board [][]byte) bool {
 	row := [9]map[byte]bool{}
 	col := [9]map[byte]bool{}

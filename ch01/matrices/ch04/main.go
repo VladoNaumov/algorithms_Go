@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-/*
--------------------------------------------------
- 4. Проход по диагоналям (i+j = const)
-    -------------------------------------------------
-*/
 func diagonalTraverse(matrix [][]int) []int {
 	if len(matrix) == 0 || len(matrix[0]) == 0 {
 		return []int{}

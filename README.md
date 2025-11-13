@@ -9,7 +9,6 @@
 * **Arrays — basic operations:** search, insertion, deletion, and shifting.
 * **Two Pointers:** efficient traversal of sorted arrays, searching for pairs and triplets.
 * **Strings:** working with sequences of characters as arrays.
-* **Matrices:** two-dimensional arrays — traversal, diagonals, rotation.
 * **Sliding Window:** analysis of subarrays with fixed or variable length.
 * **Intervals:** merging, intersection, and sorting of ranges.
 
@@ -17,7 +16,10 @@
 
 ### 2. Recursion (task recursion + matrices)
 
-**ch02 recursion + matrices**
+**ch02 matrices**
+
+* **Matrices:** two-dimensional arrays — traversal, diagonals, rotation (using loops / iterators).
+* **Matrices:** Recursion (task recursion + matrices)
 
 The basic principle: divide a problem into smaller subproblems of the same type.
 Applied in tree and graph traversal, as well as in backtracking search.
